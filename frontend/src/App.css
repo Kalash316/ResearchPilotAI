@@ -1,0 +1,405 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  font-family: "DM Sans", Arial, sans-serif;
+  color: #20252d;
+  background: #f5f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 270px;
+  flex-shrink: 0;
+  padding: 28px 20px;
+  background: #fff;
+  border-right: 1px solid #e6e9f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.brand-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-weight: 700;
+  font-size: 23px;
+  background: linear-gradient(135deg, #6758e8, #8c70ef);
+}
+
+.brand h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.brand p,
+.topbar p {
+  color: #818998;
+  font-size: 12px;
+  margin: 5px 0 0;
+}
+
+.new-chat {
+  border: 0;
+  border-radius: 10px;
+  padding: 13px;
+  background: #6657e8;
+  color: white;
+  font-weight: 600;
+}
+
+.sidebar-note {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 28px;
+  color: #555e6d;
+  font-size: 13px;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #26a875;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  color: #8a92a0;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.topbar {
+  min-height: 91px;
+  padding: 22px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  border-bottom: 1px solid #e6e9f0;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.model-label {
+  padding: 8px 12px;
+  background: #f0edff;
+  color: #5c4ad1;
+  border-radius: 20px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.chat {
+  flex: 1;
+  padding: 36px 24px;
+}
+
+.welcome {
+  max-width: 660px;
+  margin: 65px auto 30px;
+  text-align: center;
+}
+
+.welcome-icon {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 20px;
+  background: #ebe8ff;
+  color: #6554df;
+  font-size: 30px;
+  margin: 0 auto 20px;
+}
+
+.welcome h2 {
+  font-size: 26px;
+  margin: 0 0 12px;
+}
+
+.welcome > p {
+  color: #747d8c;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.suggestion {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 17px;
+  margin-top: 28px;
+  text-align: left;
+  border: 1px solid #e2e5ef;
+  background: #fff;
+  border-radius: 12px;
+  color: #404957;
+}
+
+.suggestion:hover {
+  border-color: #9b90f4;
+}
+
+.messages {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.message-avatar {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  background: #ebe8ff;
+  color: #5d4bd1;
+}
+
+.message.user .message-avatar {
+  background: #e5f4eb;
+  color: #287b51;
+}
+
+.message-content {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.7;
+}
+
+.message-content > strong {
+  display: block;
+  font-size: 14px;
+  margin: 5px 0 8px;
+}
+
+.message-content > p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 0;
+  font-size: 14px;
+}
+
+.sources {
+  margin-top: 20px;
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #e5e8f0;
+  border-radius: 12px;
+}
+
+.sources h4 {
+  margin: 0 0 12px;
+  font-size: 12px;
+  color: #747d8c;
+}
+
+.source-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-top: 1px solid #f0f1f5;
+  font-size: 13px;
+}
+
+.source-item > span {
+  color: #6554df;
+}
+
+.source-item strong,
+.source-item small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.source-item small {
+  margin-top: 4px;
+  color: #818998;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 850px;
+  margin: 15px auto;
+  font-size: 13px;
+  color: #747d8c;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border: 2px solid #ddd8ff;
+  border-top-color: #6554df;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.composer {
+  max-width: 850px;
+  width: calc(100% - 48px);
+  margin: 0 auto;
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #dfe3ed;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgb(36 43 64 / 4%);
+}
+
+.composer textarea {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  resize: vertical;
+  min-height: 54px;
+  color: #20252d;
+  background: transparent;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.composer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f1f5;
+}
+
+.composer-bottom span {
+  color: #939baa;
+  font-size: 11px;
+}
+
+.composer-bottom button {
+  border: 0;
+  border-radius: 9px;
+  background: #6657e8;
+  color: white;
+  padding: 10px 17px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.disclaimer {
+  text-align: center;
+  color: #939baa;
+  font-size: 11px;
+  padding: 18px 12px;
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    display: none;
+  }
+
+  .topbar {
+    padding: 18px;
+  }
+
+  .topbar h1 {
+    font-size: 17px;
+  }
+
+  .model-label {
+    font-size: 10px;
+  }
+
+  .chat {
+    padding: 20px 16px;
+  }
+
+  .welcome {
+    margin-top: 55px;
+  }
+
+  .welcome h2 {
+    font-size: 22px;
+  }
+
+  .composer {
+    width: calc(100% - 24px);
+  }
+
+  .composer-bottom span {
+    max-width: 190px;
+    line-height: 1.5;
+  }
+}
